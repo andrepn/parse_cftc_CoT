@@ -42,7 +42,7 @@ with open("c_year.txt", "r") as cot_file:
             if date_greater_than(split_line[1], DATE):
                 if split_line[185] == '"2500 MMBtus"':
                     list_of_important_rows.append(split_line)
-                    sum_of_change_in_OI += float(split_line[55])
+                    sum_of_change_in_OI += abs(float(split_line[55]))
 
     print(f"contracts: {sum_of_change_in_OI}")
     print(f"mmbtus: {sum_of_change_in_OI*2500}")
